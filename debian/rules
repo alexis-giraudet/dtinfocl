@@ -2,3 +2,6 @@
 
 %:
 	dh $@
+
+execute_before_dh_install:
+	unzip DtInfoCL_*.zip

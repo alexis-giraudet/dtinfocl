@@ -9,15 +9,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+      - name: Install dependencies
+        run: |
+          sudo apt -y update
+          sudo apt -y install devscripts equivs
+          sudo mk-build-deps --install debian/control --tool "apt -y" --remove
       - name: Build package
         run: |
-          set -x
-          sudo apt -y update
-          sudo apt -y install devscripts equivs unzip
-          sudo mk-build-deps --install debian/control --tool "apt -y" --remove
-          unzip DtInfoCL_*.zip
-          debuild
+          tar --verbose --extract --file dtinfocl-*.tar* --one-top-level
+          mv --verbose debian/ dtinfocl-*/
+          (cd dtinfocl-*/ && debuild)
       - uses: actions/upload-artifact@v7
         with:
           name: deb
-          path: ${{ runner.workspace }}/*.deb
+          path: ${{ github.workspace }}/*.deb
