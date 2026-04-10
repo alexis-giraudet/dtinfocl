@@ -10,10 +10,9 @@ Homepage: https://www.dektec.com/downloads/utilities/
 Rules-Requires-Root: no
 
 Package: dtinfocl
-Architecture: all
-Multi-Arch: foreign
+Architecture: amd64
 Depends:
  ${misc:Depends},
-Description: Command-Line Hardware Information Tool
+Description: DekTec command-line hardware information tool
  Command-line version of the DtInfo utility.
  Lists DekTec devices in your Linux system.

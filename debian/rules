@@ -5,3 +5,4 @@
 
 execute_before_dh_install:
 	unzip DtInfoCL_*.zip
+	ln --force --symbolic DtInfoCL64 Linux/DtInfoCL
