@@ -16,9 +16,9 @@ jobs:
           sudo mk-build-deps --install debian/control --tool "apt -y" --remove
       - name: Build package
         run: |
-          tar --verbose --extract --file dtinfocl-*.tar* --one-top-level
-          mv --verbose debian/ dtinfocl-*/
-          (cd dtinfocl-*/ && debuild)
+          tar --verbose --extract --file dektec-dtinfocl-*.tar* --one-top-level
+          mv --verbose debian/ dektec-dtinfocl-*/
+          (cd dektec-dtinfocl-*/ && debuild)
       - uses: actions/upload-artifact@v7
         with:
           name: deb
