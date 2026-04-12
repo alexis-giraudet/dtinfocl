@@ -1,4 +1,4 @@
-Source: dektec-dtinfocl
+Source: dtinfocl
 Section: devel
 Priority: optional
 Maintainer: Alexis Giraudet <alexis.giraudet@nav-timing.safrangroup.com>
@@ -9,7 +9,7 @@ Standards-Version: 4.7.3
 Homepage: https://www.dektec.com/downloads/utilities/
 Rules-Requires-Root: no
 
-Package: dektec-dtinfocl
+Package: dtinfocl
 Architecture: amd64
 Depends:
  ${misc:Depends},
